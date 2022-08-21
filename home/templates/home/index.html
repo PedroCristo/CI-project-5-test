@@ -4,11 +4,11 @@
 {% block content %}
 <!-- HOME INTRODUCTION -->
 <main id="intro-section">
-    <video src="{% static 'video/watch_video_2.mp4' %}" muted loop autoplay></video>
+    <video src="{{ MEDIA_URL }}video/watch_video_2.mp4" muted loop autoplay></video>
     <header>
         <a href="home.html" aria-label="Home Page"><span class="logo iterative-color">Watches & Clocks</span></a>
     </header>
-
+    <div class="overlay"></div>
     <div class="text-box">
         <h3>THE NEW COLLECTIONS ARE HERE</h3>
         <p>Discover how to find the best watch and enjoy exclusive products

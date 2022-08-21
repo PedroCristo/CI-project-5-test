@@ -17,6 +17,20 @@ html {
 a {
     text-decoration: none !important;
 }
+a:hover {
+    opacity: 0.7;
+}
+
+ ul {
+    list-style: none;
+ }
+
+.sub-title {
+    font-size: 2rem;
+    color: var(--text-black);
+    font-weight: 600;
+    padding: 5px 0;
+}
 
 .iterative-color {
     color: var(--iterative-color) !important;
@@ -34,7 +48,6 @@ a {
     z-index: 100;
     font-weight: 500;
 }
-
 
 .btn-intro {
     margin-top: 25px;
@@ -93,7 +106,6 @@ a {
 
 #intro-section .logo-mobile {
     display: none;
-
 }
 
 #intro-section .overlay {
@@ -103,7 +115,8 @@ a {
     width: 100%;
     height: 100%;
     background: var(--overlay-black);
-    opacity: 0.9;
+    opacity: 0.5;
+    z-index: 2;
 }
 
 #intro-section .text-box {
@@ -149,6 +162,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 5;
 }
 
 #intro-section .social ul li {
@@ -303,6 +317,55 @@ input[name='q']::placeholder {
 
 #delivery-banner {
     margin-top: 25px;
+}
+
+/* Footer */
+#footer {
+    background-color: var(--overlay-black);
+    width: 100%;
+    padding: 20px 20px 10px 20px ;
+    color: var(--text-grey);
+}
+
+#footer .logo {
+    font-size: 1.1rem;
+}
+
+#footer .sub-title {
+   margin-top: 20px;
+}
+
+#footer ul li {
+    margin-bottom: 15px;
+    margin-left: -39px;
+}
+
+#footer ul li a{
+    margin-bottom: 15px;
+}
+
+#footer ul  li,
+#footer ul  li a,
+#footer p {
+    color: var(--light-grey);
+}
+
+#footer i {
+    margin-right: 8px;
+}
+
+#footer .credid-cards-box{
+   margin-top: 25px;
+}
+
+#footer .credid-cards-box img {
+    width: 50px;
+    height: auto;
+}
+
+.copyright {
+  padding: 5px;
+  font-size: clamp(0.7rem, 2.5vw, 0.9rem);
 }
 
 /*******************************
@@ -686,4 +749,70 @@ input[name='q']::placeholder {
 
 #intro-section .social ul li i:hover {
     border: 2px solid var(--iterative-color);
+}
+
+/* MEDIA QUERIES */
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media only screen and (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
+    .display-4.logo-font.text-black {
+        font-size: 2rem;
+    }
+
+    .nav-link {
+        padding: 0.15rem;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+    }
+
+    #delivery-banner h4 {
+        font-size: .9rem;
+    }
+
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+    }
+
+    .btn.btn-outline-black.rounded-0.btn-lg,
+    .btn.btn-black.rounded-0.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .75rem;
+    }
+
+    .increment-qty, .decrement-qty {
+        padding: .25rem .5rem !important;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .row-reverse {
+        flex-direction: column !important;
+    }
+
+    #footer ul li,
+    #footer .sub-title,
+    #footer p {
+        width: 300px;
+    }
+
+    #footer .copyright p {
+        width: initial;
+    }
 }
