@@ -6,7 +6,8 @@
 /* Kaushan */
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
-
+/* Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400;1,700&display=swap');
 
 
 /*******************************
@@ -17,7 +18,9 @@
 
 
 * {
-    -webkit-transition: all ease 0.2s; 
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all ease 0.2s;
     text-decoration: none !important;
     -o-transition: all ease 0.2s;
     -webkit-transition: all ease 0.3s;
@@ -26,10 +29,8 @@
     transition: all ease0.3s;
 }
 
-body {
+html {
     height: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 :root {
@@ -60,15 +61,21 @@ a:hover {
 }
 
 .line-through {
-    text-decoration: line-through !important;
-    text-decoration-color: red !important;
+    text-decoration: line-through;
+    text-decoration-color: red;
 }
 
 .iterative-color {
     color: var(--iterative-color) !important;
 }
 
+/*******************************
+*                              *
+*         INDEX PAGE           *
+*                              *
+*******************************/
 .logo {
+    width: 250px;
     font-size: clamp(0.5rem, 2.5vw, 1.5rem);
     letter-spacing: 2px;
     z-index: 100;
@@ -78,16 +85,6 @@ a:hover {
 
 .logo-mobile {
     display: none;
-}
-
-/*******************************
-*                              *
-*         INDEX PAGE           *
-*                              *
-*******************************/
-#intro-section .logo {
-    font-size:clamp(1.2rem, 2.5vw, 2rem);
-    padding-top: 50px !important;
 }
 
 .btn-intro {
@@ -128,6 +125,7 @@ a:hover {
     left: 0;
     padding: 50px;
     z-index: 10;
+    width: 350px;
 }
 
 #intro-section video {
@@ -173,7 +171,7 @@ a:hover {
 }
 
 #intro-section .text-box h3 {
-    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
@@ -693,11 +691,5 @@ input[name='q']::placeholder {
 @media only screen and (max-width:537px) {
     .logo-mobile {
         padding-top: 10px;
-    }
-}
-
-@media only screen and (max-height: 410px) {
-    #intro-section header {
-        top: 40px;
     }
 }

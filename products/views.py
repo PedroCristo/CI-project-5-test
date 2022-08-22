@@ -70,14 +70,16 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
-def products_featured(request):
+
+def products_selected(request):
     """ A view to show products featured """
 
-    products_selected = Product.objects.filter(
-         featured=True)
+    products_selected = Product.objects.all()
+    
     context = {
-        'produtcs_featured': products_selected,
+        'products_selected':    products_selected,
     }
+
     return render(request, 'products/products_selected.html', context)
 
 

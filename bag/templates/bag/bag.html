@@ -45,8 +45,8 @@
                                     {% include "bag/product-info.html" %}
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
-                                    <p class="my-0">Price Each: ${{ item.product.price }}</p>
-                                    <p><strong>Subtotal: </strong>${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    <p class="my-0">Price Each: €{{ item.product.price }}</p>
+                                    <p><strong>Subtotal: </strong>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     {% include "bag/quantity-form.html" %}
@@ -80,8 +80,13 @@
                                     <td class="py-3">
                                         {% include "bag/product-info.html" %}
                                     </td>
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
+                                    <td class="py-3 ml-5">
+                                        {% if item.product.old_price %}
+                                        <p class="lead mb-0 text-left font-weight-bold line-through">€{{ item.product.old_price }}</p>
+                                        <p class="lead mb-0 text-left font-weight-bold">€{{ item.product.price }}</p>
+                                        {% else %}
+                                        <p class="lead mb-0 text-left font-weight-bold">€{{ item.product.price }}</p>
+                                        {% endif %}
                                     </td>
                                     <td class="py-3 w-25">
                                         {% include "bag/quantity-form.html" %}
