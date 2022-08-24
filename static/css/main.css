@@ -76,6 +76,10 @@ a:hover {
     color: var(--iterative-color) !important;
 }
 
+.bg-iteractive-color {
+    background-color: var(--iterative-color) !important;
+}
+
 .logo {
     font-size: clamp(0.5rem, 2.5vw, 1.5rem);
     letter-spacing: 2px;
@@ -86,6 +90,15 @@ a:hover {
 
 .logo-mobile {
     display: none;
+}
+
+.btt-button {
+    display: none;
+}
+
+.btt-button.back-top-active {
+    display: block;
+
 }
 
 /*******************************
@@ -237,9 +250,17 @@ a:hover {
 *******************************/
 .navbar-expand-lg{
     background-color: var(--light-grey);
-    margin-top: 25px;
+    margin-top: 30px;
     padding: 0;
 }
+
+.topnav {
+    margin-top: 1px;
+}
+
+.topnav.topnav-active {
+    margin-top: -10px !important;
+} 
 
 .navbar-light .navbar-nav .nav-link{
     padding: 15px 10px;
@@ -249,6 +270,7 @@ a:hover {
     background-color: var(--iterative-color);
     color: var(--light-grey) !important;
 }
+
 
 /*******************************
 *                              *
@@ -410,6 +432,13 @@ input[name='q']::placeholder {
   padding: 5px;
   font-size: clamp(0.7rem, 2.5vw, 0.9rem);
 }
+
+/*******************************
+*                              *
+*       PRODUCTS PAGE          *
+*                              *
+*******************************/
+
 
 /*******************************
 *                              *
@@ -610,6 +639,10 @@ input[name='q']::placeholder {
 
     .nav-link {
         padding: 0.15rem;
+    }
+
+    .navbar-expand-lg.navbar-expand-active {
+        margin-top: 0px;
     }
 
     .nav-link i.fa-lg {

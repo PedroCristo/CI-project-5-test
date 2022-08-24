@@ -5,9 +5,9 @@
 {% block content %}
 <!-- PRODUCTS SELECTED SECTION -->
 <section id="products_selected" class="container">
-    <h2 class="sub-title">Selected Products</h2>
+    <h2 class="sub-title">Promotion Products</h2>
     <div class="row">
-        {% for product in products_selected %}
+        {% for product in products_promotion %}
             <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3">
                 <div class="card h-100 border-0">
                     {% if product.image %}
@@ -83,4 +83,3 @@
 </section>
 <!-- END OF PRODUCTS SELECTED SECTION -->
 {% endblock content %}
-

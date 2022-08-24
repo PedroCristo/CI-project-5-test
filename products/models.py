@@ -64,6 +64,7 @@ class Product(models.Model):
     product_status = models.ForeignKey(
         'Product_status', null=True, blank=True, on_delete=models.SET_NULL)
     featured = models.BooleanField(default=False)
+    promotion = models.BooleanField(default=False)
     
 
     def __str__(self):

@@ -90,6 +90,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
                 'products.context_processors.products_selected',
+                'products.context_processors.products_promotion',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
