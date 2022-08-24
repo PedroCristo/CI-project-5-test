@@ -52,11 +52,19 @@ a:hover {
     list-style: none;
  }
 
+ i {
+    font-size: 18px !important;
+ }
+
+ .fa-star {
+    color: #ffc107;
+ }
+
 .sub-title {
     font-size: 2rem;
     color: var(--text-black);
     font-weight: 600;
-    padding: 5px 0;
+    padding: 15px 0;
 }
 
 .line-through {
@@ -345,6 +353,13 @@ input[name='q']::placeholder {
 
 #delivery-banner {
     margin-top: 25px;
+}
+
+/* Selected Products */
+
+#products_selected {
+    padding: 15px;
+    margin-top: 35px;
 }
 
 /* Footer */
