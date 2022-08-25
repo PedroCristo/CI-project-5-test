@@ -120,15 +120,11 @@
             </div>
         </div>
     </div>
+    {% include "includes/products_comming_soon.html" %}
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
-</script>
 {% include 'includes/quantity_input_script.html' %}
 
 <script type="text/javascript">

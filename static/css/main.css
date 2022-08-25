@@ -37,6 +37,9 @@ body {
     --overlay-black: rgba(0, 0, 0, 0.7);
     --fully-black: rgb(17, 17, 17);
     --light-grey: rgb(224, 218, 218);
+    --white: rgb(255, 255, 255);
+    --orange: rgb(236, 170, 115);
+    --red : rgb(228, 15, 15);
 
     /* font Color */
     --text-white: rgb(250, 235, 215);
@@ -69,7 +72,7 @@ a:hover {
 
 .line-through {
     text-decoration: line-through !important;
-    text-decoration-color: red !important;
+    text-decoration-color: var(--red) !important;
 }
 
 .iterative-color {
@@ -78,6 +81,11 @@ a:hover {
 
 .bg-iteractive-color {
     background-color: var(--iterative-color) !important;
+}
+
+.bg-orange {
+    background-color: var(--red) !important;
+
 }
 
 .logo {
@@ -99,6 +107,21 @@ a:hover {
 .btt-button.back-top-active {
     display: block;
 
+}
+
+.owl-carousel .owl-item img {
+    width: 75%;
+}
+
+.owl-prev,
+.owl-next {
+    font-size: 40px !important;
+    color: var(--iterative-color) !important;
+    outline: none !important;
+}
+.owl-prev:hover,
+.owl-next:hover {
+  background: var(--white) !important;
 }
 
 /*******************************
@@ -259,7 +282,7 @@ a:hover {
 }
 
 .topnav.topnav-active {
-    margin-top: -10px !important;
+    margin-top: -8px;
 } 
 
 .navbar-light .navbar-nav .nav-link{
@@ -378,11 +401,11 @@ input[name='q']::placeholder {
 }
 
 /* Selected Products */
-
 #products_selected {
     padding: 15px;
     margin-top: 35px;
 }
+
 
 /* Footer */
 #footer {
@@ -641,9 +664,13 @@ input[name='q']::placeholder {
         padding: 0.15rem;
     }
 
-    .navbar-expand-lg.navbar-expand-active {
-        margin-top: 0px;
+    .navbar-expand-lg{
+        margin-top: -1px !important;
     }
+
+    .topnav.topnav-active {
+        margin-top: 1px;
+    } 
 
     .nav-link i.fa-lg {
         font-size: 1rem;

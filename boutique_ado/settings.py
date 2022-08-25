@@ -91,6 +91,7 @@ TEMPLATES = [
                 'bag.contexts.bag_contents',
                 'products.context_processors.products_selected',
                 'products.context_processors.products_promotion',
+                'products.context_processors.comming_soon',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',

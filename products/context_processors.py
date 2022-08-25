@@ -22,3 +22,13 @@ def products_promotion(request):
 
     return context    
 
+
+def comming_soon(request):
+    """ A view to show products selected """
+    comming_soon = Product.objects.filter(comming_soon=True)
+
+    context = {
+        'comming_soon': comming_soon,
+    }
+
+    return context

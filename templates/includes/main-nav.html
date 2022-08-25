@@ -36,7 +36,7 @@
                 Gender
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?gender_category=Female" class="dropdown-item">Female</a>
+                <a href="{% url 'products' %}?Gender_category=Female" class="dropdown-item">Female</a>
                 <a href="{% url 'products' %}?gender_category=Male" class="dropdown-item">Male</a>
                 <a href="{% url 'products' %}?gender_category=Kids" class="dropdown-item">Kids</a>
                 <a href="{% url 'products' %}?gender_category=Female,Male,Kids" class="dropdown-item">All Homeware</a>
@@ -48,10 +48,10 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?Product_status=New Product" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'products' %}?Product_status=Sales" class="dropdown-item">Sales</a>
-                <a href="{% url 'products' %}?Product_status=Clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?Product_status=New Product,Sales,Clearance" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?product_status=New" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?product_status=Sales" class="dropdown-item">Sales</a>
+                <a href="{% url 'products' %}?product_status=Clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?Ppoduct_status=New Product,Sales,Clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>

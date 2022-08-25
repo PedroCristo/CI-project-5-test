@@ -10,8 +10,9 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container-fluid">
+<!-- PRODUCTS SECTION -->
+<div class="overlay"></div>
+<div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="sub-title">Products</h2>
@@ -71,8 +72,8 @@
                                         <div class="col">
                                             {% if product.old_price %}
                                             <p class="lead mb-0 text-left font-weight-bold line-through">€{{ product.old_price }}</p>
-                                            <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
-                                            <span><img src="https://thumbs.dreamstime.com/b/sales-banner-colorful-price-tags-sale-sign-40114844.jpg" alt="" style="width: 25%;"></span>
+                                            <p class="lead mb-0 text-left font-weight-bold text-success">€{{ product.price }}</p>
+                                            <span><img class="w-25" src="https://thumbs.dreamstime.com/b/sales-banner-colorful-price-tags-sale-sign-40114844.jpg" alt=""></span>
                                             {% else %}
                                             <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                             {% endif %}
@@ -88,9 +89,17 @@
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
+                                            {% if product.comming_soon %}
+                                            <div>
+                                                <img class="w-25" src="https://us.123rf.com/450wm/mivgor/mivgor1810/mivgor181000040/110045414-red-vector-banner-ribbon-coming-soon-on-white-background-with-soft-shadow.jpg?ver=6" alt="">
+                                                <br>
+                                                <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-black rounded-0 mt-2 bg-orange">Discover More</a>
+                                            </div>
+                                            {% else %}
                                             <div>
                                                 <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-black rounded-0 mt-2 bg-warning">Buy Now</a>
                                             </div>
+                                            {% endif %}
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
                                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
@@ -127,6 +136,7 @@
             </div>
         </div>
     </div>
+    <!-- END OF PRODUCTS SECTION -->
 {% endblock %}
 
 {% block postloadjs %}
