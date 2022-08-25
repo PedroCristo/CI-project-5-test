@@ -54,6 +54,15 @@
                 <a href="{% url 'products' %}?Ppoduct_status=New Product,Sales,Clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black ml-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="{% url 'products' %}?product_status=New" class="dropdown-item">Blog</a>
+                <a href="/" class="dropdown-item">Intro</a>
+            </div>
+        </li>
     </ul>
 </div>
 <!-- END OF MAIN NAVBAR -->
