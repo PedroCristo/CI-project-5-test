@@ -33,3 +33,24 @@ class AddReview(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         form.instance.name = self.request.user
         return super().form_valid(form)    
+
+
+class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+    Edit User Review
+    """
+    model = Reviews
+    form_class = ReviewsForm
+    template_name = 'reviews/add_edit_review.html'
+    success_message = 'The review was successfully updated'  
+
+
+@login_required
+def delete_review(request, review_id):
+    """
+    Delete User Review
+    """
+    reviews = get_object_or_404(Reviews, id=review_id)
+    reviews.delete()
+    messages.success(request, 'The review was deleted successfully')
+    return redirect('reviews')       
