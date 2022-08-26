@@ -73,7 +73,7 @@
                                             {% if product.old_price %}
                                             <p class="lead mb-0 text-left font-weight-bold line-through">€{{ product.old_price }}</p>
                                             <p class="lead mb-0 text-left font-weight-bold text-success">€{{ product.price }}</p>
-                                            <span><img class="w-25" src="https://thumbs.dreamstime.com/b/sales-banner-colorful-price-tags-sale-sign-40114844.jpg" alt=""></span>
+                                           <img class="w-25" src="https://thumbs.dreamstime.com/b/sales-banner-colorful-price-tags-sale-sign-40114844.jpg" alt="">
                                             {% else %}
                                             <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                             {% endif %}
@@ -91,7 +91,7 @@
                                             {% endif %}
                                             {% if product.comming_soon %}
                                             <div>
-                                                <img class="w-25" src="https://us.123rf.com/450wm/mivgor/mivgor1810/mivgor181000040/110045414-red-vector-banner-ribbon-coming-soon-on-white-background-with-soft-shadow.jpg?ver=6" alt="">
+                                                <img class="w-50" src="https://us.123rf.com/450wm/mivgor/mivgor1810/mivgor181000040/110045414-red-vector-banner-ribbon-coming-soon-on-white-background-with-soft-shadow.jpg?ver=6" alt="">
                                                 <br>
                                                 <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-black rounded-0 mt-2 bg-orange">Discover More</a>
                                             </div>

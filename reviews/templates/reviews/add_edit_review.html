@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
+<!-- ADD/UPDATE REVIEWS SECTION -->
+<div id="add_review" class="edit-comments">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        {% if review %}
+        <h1 class="sub-title mt-70">Edit Review</h1>
+        <p>Edit Review as: {{ user.username | slice:":10" }}</p>
+        {% else %}
+        <h1 class="sub-title mt-70">Add Review</h1>
+        <p>Add Review as: {{ user.username | slice:":10" }}</p>
+        {% endif %}
+      </div>
+      <div class="col-md-6 mt-5">
+        <h2 class="sub-title">Your Opinion Matters</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+          perspiciatis, harum repudiandae voluptas temporibus consectetur
+          maiores, ex debitis expedita, quibusdam at dicta laudantium. Deserunt
+          aperiam doloremque adipisci dolore. Aperiam sunt laborum, ad ducimus
+          dolorum excepturi sed quidem facere officiis corrupti temporibus fugit
+          consequuntur enim tempora recusandae, repellat voluptatem est soluta?
+        </p>
+      </div>
+      <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <table class="w-50 table">
+            {% for field in form %}
+            <tr>
+              <th>{{field.label}}</th>
+              <td>{{ field }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+          <div class="text-center">
+            <button
+              class="btn btn-secondary right mb-4"
+              type="submit"
+              value="Save"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END ADD/UPDATE REVIEWS SECTION  -->
+{% endblock %}

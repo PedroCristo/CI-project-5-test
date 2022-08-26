@@ -1,0 +1,15 @@
+/*******************************
+*                              *
+*          REVIEWS CSS         *
+*                              *
+*******************************/
+
+#add_review form {
+    margin: 50px auto 0;
+    display: block;
+    width: inherit;
+}
+
+.red {
+    color: red;
+}
