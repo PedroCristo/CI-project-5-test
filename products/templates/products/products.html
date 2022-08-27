@@ -101,10 +101,32 @@
                                             </div>
                                             {% endif %}
                                             {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
+                                            <hr>
+                                                <div class="text-center mt-3">
+                                                    <a href="{% url 'edit_product' product.id %}" class="btn-edit btn-sm btn-secondary mb-3"
+                                                        aria-label="Go to the Edit Product Page">Edit</a>
+                                                    <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal"
+                                                        data-bs-target="#delete-product">Delete</button>
+                                                </div>
+                                                <!-- Delete book bootstrap modal-->
+                                                <div class="modal fade" id="delete-product" tabindex="-1" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Delete Product</h5>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Are you sure you want to delete your this product?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <a href="{% url 'delete_product' product.id %}" class="btn btn-danger"
+                                                                    aria-label="Delete Product">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             {% endif %}
                                         </div>
                                     </div>

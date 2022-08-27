@@ -62,12 +62,12 @@
                 {% if user.is_authenticated and user.username == book.name or user.is_superuser %}
                 <div class="text-center">
                     <a href="edit_review/{{reviews.id}}" class="btn-edit btn-sm btn-secondary mb-3"
-                        aria-label="Go to the Edit Comments Page">Edit</a>
+                        aria-label="Go to the Edit Review Page">Edit</a>
                     <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal"
-                        data-bs-target="#delete-book">Delete</button>
+                        data-bs-target="#delete-review">Delete</button>
                 </div>
                 <!-- Delete book bootstrap modal-->
-                <div class="modal fade" id="delete-book" tabindex="-1" aria-hidden="true">
+                <div class="modal fade" id="delete-review" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
