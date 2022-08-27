@@ -93,6 +93,7 @@ TEMPLATES = [
                 'products.context_processors.products_selected',
                 'products.context_processors.products_promotion',
                 'products.context_processors.comming_soon',
+                'reviews.context_processors.customers_reviews',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',

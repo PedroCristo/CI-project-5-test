@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
-{% endblock %}
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -14,20 +10,92 @@
 {% endblock %}
 
 {% block content %}
-<div id="reviews" class="container"></div>
-    <div class="overlay"></div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                {% for reviews in reviews_list %}
-                {{reviews.id}}
-                
-                <a href="edit_review/{{reviews.id}}" class="btn-edit btn-sm btn-secondary mb-3"
-                aria-label="Go to the Edit Comments Page">Edit</a>
-                <a href="delete_review/{{reviews.id}}" class="btn btn-danger"
-                aria-label="Delete Comment">Delete</a>
-<span><i class="fa-solid fa-at"></i>{{ reviews.name  | slice:":10" }} | </span>
-                {% endfor %}
-             
-    </div>
+<!-- REVIEWS SECTION -->
+<section id="reviews" class="container mt-5"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="banner-box mt-5">
+                <img class="w-75 banner-1" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e46093102894097.5f40ea1dd623a.jpg" alt="">
+                <img class="w-75 banner-2 mt-2 mb-2" src="https://img.freepik.com/premium-psd/product-social-media-post-banner-template-watch-sales-marketing-square-flyer_135461-148.jpg" alt=""> 
+                <img class="w-75 banner-3" src="https://i.pinimg.com/736x/53/41/be/5341be166e6c6b4e296810b8e2c9fda5.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h2 class="sub-title">Customers Reviews</h2>
+            <hr>
+            {% for reviews in reviews_list %}
+            <div class="review-box">
+                <p><i class="fas fa-user fa-lg iterative-color"></i> {{ reviews.name  | slice:":10" }}</p>
+                <span>
+                    {% if reviews.rating == 5 %}
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    {% elif reviews.rating == 4 %}
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star text-dark"></i>
+                    {% else%}
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star text-dark"></i>
+                    <i class="fas fa-star text-dark"></i>
+                    {% endif %}
+                </span>
+                <span> "{{ reviews.review_name}}"</span>
+                <p class="mt-2"><i class="fa fa-clock iterative-color"></i> Reviewed on: {{ reviews.timestamp }}</p>
+                <div class="review-text">
+                    <p class="mt-3">{{ reviews.product_review}}</p>  
+                </div>
+                <div class="review-img">
+                    {% if reviews.image %}
+                        <img class="card-img-top img-fluid w-25 mt-3" src="{{ reviews.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img class="card-img-top img-fluid w-25 mt-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    {% endif %}
+                </div>
+                {% if user.is_authenticated and user.username == book.name or user.is_superuser %}
+                <div class="text-center">
+                    <a href="edit_review/{{reviews.id}}" class="btn-edit btn-sm btn-secondary mb-3"
+                        aria-label="Go to the Edit Comments Page">Edit</a>
+                    <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal"
+                        data-bs-target="#delete-book">Delete</button>
+                </div>
+                <!-- Delete book bootstrap modal-->
+                <div class="modal fade" id="delete-book" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete Review</h5>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete your review?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                <a href="delete_review/{{reviews.id}}" class="btn btn-danger"
+                                    aria-label="Delete Comment">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <hr>
+            {% endfor %}
+          </div>
+        </section>
+<!-- END OF REVIEWS SECTION -->
 {% endblock %}
+{{reviews.id}}
 
+<a href="edit_review/{{reviews.id}}" class="btn-edit btn-sm btn-secondary mb-3"
+aria-label="Go to the Edit Comments Page">Edit</a>
+<a href="delete_review/{{reviews.id}}" class="btn btn-danger"
+aria-label="Delete Comment">Delete</a>

@@ -12,6 +12,22 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!-- STRIPE -->
 <script src="https://js.stripe.com/v3/"></script>
+
+<script>
+    // Settimeout to dismiss the alert box
+    $(function () {
+        setTimeout(function () {
+            if ($(".toast").is(":visible")) {
+                $(".toast").fadeOut();
+            }
+        }, 3500);
+    });
+</script>
+
+<script type="text/javascript">
+    // Shows the alert toast on the top of the screen
+    $('.toast').toast('show');
+</script>
 {% endblock %}
 
 </body>

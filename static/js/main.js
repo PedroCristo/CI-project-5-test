@@ -3,8 +3,8 @@ $("#year").text(new Date().getFullYear());
 
 
 // Back to the top button
-$('.btt-link').click(function(e) {
-    window.scrollTo(0,0)
+$('.btt-link').click(function (e) {
+    window.scrollTo(0, 0)
 })
 
 
@@ -12,18 +12,18 @@ $('.btt-link').click(function(e) {
 $(document).ready(function () {
     $(window).scroll(function () {
         if ($(document).scrollTop() > 25) {
-        $(".btt-button").addClass("back-top-active");
-        $(".topnav").addClass("topnav-active");
-      } else {
-        $(".btt-button").removeClass("back-top-active");
-        $(".topnav").removeClass("topnav-active");
-      }
+            $(".btt-button").addClass("back-top-active");
+            $(".topnav").addClass("topnav-active");
+        } else {
+            $(".btt-button").removeClass("back-top-active");
+            $(".topnav").removeClass("topnav-active");
+        }
     });
-  });
-          
+});
 
-  // OWL Carousel
-  $('.owl-carousel').owlCarousel({
+
+// OWL Carousel
+$('.owl-carousel').owlCarousel({
     loop: true,
 
     nav: true,
