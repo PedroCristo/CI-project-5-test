@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Category(models.Model):
+    """
+    Modal for categorries
+    """
     class Meta:
         verbose_name_plural = 'Categories'
     name = models.CharField(max_length=100)
@@ -15,6 +18,9 @@ class Category(models.Model):
 
 
 class Gender_category(models.Model):
+    """
+    Modal for gender categorries
+    """
     class Meta:
         verbose_name_plural = 'Gender Categories'
     name = models.CharField(max_length=100)
@@ -28,6 +34,9 @@ class Gender_category(models.Model):
 
 
 class Product_status(models.Model):
+    """
+    Modal for product status
+    """
     class Meta:
         verbose_name_plural = 'Product Status'
     name = models.CharField(max_length=100)
@@ -41,6 +50,9 @@ class Product_status(models.Model):
 
 
 class Product(models.Model):
+    """
+    Modal for product
+    """
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     gender_category = models.ForeignKey(

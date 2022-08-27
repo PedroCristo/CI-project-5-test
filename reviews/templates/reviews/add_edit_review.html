@@ -31,13 +31,13 @@
       </div>
       <div class="col-md-6">
         <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          <table class="w-50 table">
+            {% csrf_token %}
             {% for field in form %}
-            <tr>
-              <th>{{field.label}}</th>
-              <td>{{ field }}</td>
-            </tr>
+                {% if field.name != 'image' %}
+                    {{ field | as_crispy_field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
             {% endfor %}
           </table>
           <div class="text-center">
