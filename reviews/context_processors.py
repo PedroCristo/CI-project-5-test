@@ -1,13 +1,13 @@
 from .models import *
 
 
-def customers_reviews(request):
+def service_reviews(request):
     """ A view to show customers reviews """
-    reviews = Reviews.objects.all().filter(
+    service_reviews = Reviews.objects.filter(
         approved=True).order_by("-timestamp")
 
     context = {
-        'reviews': reviews,
+        'service_reviews': service_reviews,
     }
 
     return context

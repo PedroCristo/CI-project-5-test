@@ -75,11 +75,11 @@ a:hover {
     text-decoration-color: var(--red) !important;
 }
 
-.iterative-color {
+.interactive-color {
     color: var(--iterative-color) !important;
 }
 
-.bg-iteractive-color {
+.bg-interactive-color {
     background-color: var(--iterative-color) !important;
 }
 
@@ -534,20 +534,12 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+
 /*******************************
 *                              *
-*      MEDIA QUERIES           *
+*         ALLAUTH FORM         *
 *                              *
 *******************************/
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
-/* Allauth form */
-
 .allauth-form-inner-content p {
     margin-top: 1.5rem; 
     color: #6c757d; /
@@ -584,9 +576,6 @@ input[name='q']::placeholder {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0;
-
-    /* standard bootstrap btn transitions */
-    /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
 }
 
 .allauth-form-inner-content button:hover,
@@ -629,7 +618,51 @@ input[name='q']::placeholder {
 }
 
 
-/* fixed top navbar only on medium and up */
+/*******************************
+*                              *
+*       MAILCHIMP FORM        *
+*                              *
+*******************************/
+#mc_embed_signup {
+    padding: 10px 0;
+    background: none; 
+    clear:left; 
+    font:14px;
+    width:350px;
+    border: 1px solid var(--iterative-color);
+    border-radius: 5px;
+}
+
+#mc_embed_signup img{
+   width: 180%;
+   margin-left: -55px;
+   display: none;
+}
+
+#mc_embed_signup .indicates-required {
+    text-align: left;
+}
+
+
+/*******************************
+*                              *
+*      MEDIA QUERIES           *
+*                              *
+*******************************/
+
+@media only scren and (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+
+@media only screen and (max-width: 1100px) {
+    #mc_embed_signup {
+        width:310px;
+    }
+}
+
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -699,7 +732,12 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
+
+    #mc_embed_signup {
+        width:290px;
+    }
 }
+
 
 @media only screen and (max-width: 991px) {
     .header-container {

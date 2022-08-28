@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block page_header %}
+{% extends "base.html" %}
+{% load static %} 
+{% block page_header %}
 <div class="container header-container">
   <div class="row">
     <div class="col"></div>
@@ -6,87 +8,26 @@
 </div>
 {% endblock %}
 
-<!-- CAROUSEL SECTION -->
 {% block content %}
-<section
-  id="carouselExampleIndicators"
-  class="carousel slide"
-  data-ride="carousel"
->
-  <ol class="carousel-indicators">
-    <li
-      data-target="#carouselExampleIndicators"
-      data-slide-to="0"
-      class="active"
-    ></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img
-        class="d-block w-100"
-        src="https://d1rkccsb0jf1bk.cloudfront.net/assets/2022/summer/Banner__AWFAO_Hero_Desktop2.webp"
-        alt="First slide"
-      />
-    </div>
-    <div class="carousel-item">
-      <img
-        class="d-block w-100"
-        src="https://d1rkccsb0jf1bk.cloudfront.net/assets/2022/summer/FossilGroup_DesktopBanner.webp"
-        alt="Second slide"
-      />
-    </div>
-    <div class="carousel-item">
-      <img
-        class="d-block w-100"
-        src="https://d1rkccsb0jf1bk.cloudfront.net/assets/2022/summer/50__Sale_Desktop.webp"
-        alt="Third slide"
-      />
-    </div>
-  </div>
-  <a
-    class="carousel-control-prev"
-    href="#carouselExampleIndicators"
-    role="button"
-    data-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a
-    class="carousel-control-next"
-    href="#carouselExampleIndicators"
-    role="button"
-    data-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</section>
+
+<!-- CAROUSEL SECTION -->
+{% include "includes/banner_carousel.html" %}
 <!-- END OF CAROUSEL SECTION -->
 
 <!-- DELIVERY BANNER -->
-<div id="delivery-banner" class="container-fluid">
-  <div class="row text-center">
-    <div class="col-12 bg-warning text-white">
-      <h4 class="logo-font my-1">
-        Free delivery on orders over €{{ free_delivery_threshold }}!
-      </h4>
-    </div>
-  </div>
-</div>
+{% include "includes/banner_delivery.html" %}
 <!-- END OF DELIVERY BANNER -->
+
+<!-- PRODUCTS SELECTED SECTION -->
 {% include "includes/products_selected.html" %}
+<!-- END OF PRODUCTS SELECTED SECTION -->
 
-<!-- HOME BANNER BOTTOM -->
-<div id="banner-bottom" class="mt-5 mb-5">
-  <div class="container-xxl">
-    <img class="w-100" style="height: 550px;" src="https://i.ytimg.com/vi/gMzsP8KapOg/maxresdefault.jpg" alt="">
-  </div>
-</div>
-<!-- END OF HOME BANNER BOTTOM -->
+<!-- BANNER BOTTOM -->
+{% include "includes/banner_bottom.html" %}
+<!-- END OF BANNER BOTTOM -->
 
+<!-- SERVICE REVIEW SECTION -->
 {% include "includes/service_review.html" %}
+<!-- END OF SERVICE REVIEW SECTION -->
 
 {% endblock %}

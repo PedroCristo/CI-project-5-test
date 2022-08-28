@@ -2,7 +2,7 @@
 <li class="list-inline-item">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <div><i class="fas fa-search fa-lg iterative-color"></i></div>
+            <div><i class="fas fa-search fa-lg interactive-color"></i></div>
             <p class="my-0">Search</p>
         </div>
     </a>
@@ -13,7 +13,7 @@
                 <div class="input-group-append">
                     <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
                         <span class="icon">
-                            <i class="fas fa-search iterative-color"></i>
+                            <i class="fas fa-search interactive-color"></i>
                         </span>
                     </button>
                 </div>
@@ -24,7 +24,7 @@
 <li class="list-inline-item dropdown">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <div><i class="fas fa-user fa-lg iterative-color"></i></div>
+            <div><i class="fas fa-user fa-lg interactive-color"></i></div>
             <p class="my-0">My Account</p>
         </div>
     </a>
@@ -44,7 +44,7 @@
 <li class="list-inline-item">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
         <div class="text-center">
-            <div><i class="fas fa-shopping-bag fa-lg iterative-color"></i></div>
+            <div><i class="fas fa-shopping-bag fa-lg interactive-color"></i></div>
             <p class="my-0">
                 {% if grand_total %}
                     ${{ grand_total|floatformat:2 }}
@@ -56,6 +56,6 @@
     </a>
 </li>
 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-    <h2 class="logo logo-mobile my-0 iterative-color"><strong>Watches & Clocks</strong></h2>
+    <h2 class="logo logo-mobile my-0 interactive-color"><strong>Watches & Clocks</strong></h2>
 </a>
 <!-- END OF MOBILE TOP HEADER -->

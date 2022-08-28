@@ -8,28 +8,38 @@
 <!-- ADD/UPDATE REVIEWS SECTION -->
 <div id="add_review" class="edit-comments">
   <div class="container">
-    <div class="row">
+    <div class="row p-3">
       <div class="col-12 text-center">
         {% if reviews %}
-        <h1 class="sub-title mt-70">Edit Review</h1>
-        <p>Edit Review as: {{ user.username | slice:":10" }}</p>
+        <h1 class="sub-title mt-70">Edit Review As:</h1>
+        <p><i class="fas fa-user fa-lg interactive-color"></i> {{ user.username  | slice:":10" }}</p>
         {% else %}
-        <h1 class="sub-title mt-70">Add Review</h1>
-        <p>Add Review as: {{ user.username | slice:":10" }}</p>
+        <h1 class="sub-title mt-70">Add Review As:</h1>
+         <p><i class="fas fa-user fa-lg interactive-color"></i> {{ user.username  | slice:":10" }}</p>
         {% endif %}
       </div>
-      <div class="col-md-6 mt-5">
-        <h2 class="sub-title">Your Opinion Matters</h2>
-        <p class="pr-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-          perspiciatis, harum repudiandae voluptas temporibus consectetur
-          maiores, ex debitis expedita, quibusdam at dicta laudantium. Deserunt
-          aperiam doloremque adipisci dolore. Aperiam sunt laborum, ad ducimus
-          dolorum excepturi sed quidem facere officiis corrupti temporibus fugit
-          consequuntur enim tempora recusandae, repellat voluptatem est soluta?
+      <div class="col-md-6 mt-5 text-justify p-2">
+        {% if reviews %}
+        <h2 class="sub-title interactive-color">Change your review at<br>any time!</h2>
+        {% else %}
+        <h2 class="sub-title interactive-color">Your Opinion Matters!</h2>
+        {% endif %}
+        <p class="p-1">
+          We want to hear from you and this is your chance to let us know what you think
+          about our company and products. Your feedback will help us to improve the quality of the services.
+        </p>
+        <p class="p-1">
+        Please take this brief survey to provide your opinion about our website. The 
+        form should take no longer than 5 minutes to complete.
+        </p>
+        <p class="p-1">
+          Thanks very much.
+        </p>
+        <p class="p-1">
+          Watches & Clocks
         </p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 p-2">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}

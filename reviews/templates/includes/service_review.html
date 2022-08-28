@@ -9,10 +9,11 @@
         <div class="row">
             <div class="col-12 m-auto">
                 <div class="owl-carousel owl-theme">
-                  {% for review in reviews %}
+                  {% for review in service_reviews %}
                   <div class="card h-100 border-0">
                    <h3 class="text-center">{{ review.name }}</h3>
-                   <p class="text-center">"{{ review.service_review}}"</p>
+                   <i class="fas fa-quote-left text-center p-3 interactive-color"></i>
+                   <p class="text-center">{{ review.service_review}}</p>
                    <span class="text-center">
                         {% if review.service_rating == 5 %}
                         <i class="fas fa-star"></i>

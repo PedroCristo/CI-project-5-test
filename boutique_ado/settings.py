@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'reviews',
+    'banners',
     'django_summernote',
 
     # Other
@@ -93,7 +94,10 @@ TEMPLATES = [
                 'products.context_processors.products_selected',
                 'products.context_processors.products_promotion',
                 'products.context_processors.comming_soon',
-                'reviews.context_processors.customers_reviews',
+                'reviews.context_processors.service_reviews',
+                'banners.context_processors.banner_carousel',
+                'banners.context_processors.banner_bottom',
+                'banners.context_processors.banner_vertival',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
