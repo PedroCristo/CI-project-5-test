@@ -10,7 +10,7 @@ class Reviews(models.Model):
         verbose_name_plural = 'Reviews'
     review_name = models.CharField(max_length=100)
     name = models.CharField(max_length=20)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='reviews_images/', null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     product_review = models.TextField(max_length=300)
     rating = models.DecimalField(
