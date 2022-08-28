@@ -406,8 +406,11 @@ input[name='q']::placeholder {
     margin-top: 35px;
 }
 
-
-/* Footer */
+/*******************************
+*                              *
+*           FOOTER             *
+*                              *
+*******************************/
 #footer {
     background-color: var(--overlay-black);
     width: 100%;
@@ -461,7 +464,6 @@ input[name='q']::placeholder {
 *       PRODUCTS PAGE          *
 *                              *
 *******************************/
-
 
 /*******************************
 *                              *
@@ -633,10 +635,8 @@ input[name='q']::placeholder {
     border-radius: 5px;
 }
 
-#mc_embed_signup img{
-   width: 180%;
-   margin-left: -55px;
-   display: none;
+#mc_embed_signup div.response {
+    width: 220px;
 }
 
 #mc_embed_signup .indicates-required {

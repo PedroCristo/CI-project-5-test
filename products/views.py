@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
+from .models import Product, Category, Gender_category, Product_status
 from .forms import ProductForm
 
 # Create your views here.
@@ -15,6 +15,8 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
+    gender_categories = None
+    product_status = None
     sort = None
     direction = None
 
@@ -27,6 +29,10 @@ def all_products(request):
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
+            if sortkey == 'gender_category':
+                sortkey = 'gender_category__name'
+            if sortkey == 'Product_status':
+                sortkey = 'Product_status__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -37,6 +43,16 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
+        if 'gender_category' in request.GET:
+            gender_category = request.GET['gender_category'].split(',')
+            products = products.filter(gender_category__name__in=gender_category)
+            gender_categories  = Gender_category.objects.filter(name__in=gender_category)
+
+        if 'product_status' in request.GET:
+            product_status = request.GET['product_status'].split(',')
+            products = products.filter(product_status__name__in=product_status)
+            product_status = Product_status.objects.filter(name__in=product_status)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -54,6 +70,8 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'current_gender_category': gender_categories,
+        'current_product_status': product_status,
     }
 
     return render(request, 'products/products.html', context)
