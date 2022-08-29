@@ -101,6 +101,8 @@ i {
 
 .btt-button {
     display: none;
+    z-index: 100;
+
 }
 
 .btt-button.back-top-active {
@@ -462,7 +464,26 @@ input[name='q']::placeholder {
     height: auto;
 }
 
-.copyright {
+#footer .trust-company {
+    width: 200px;
+    position: relative;
+    margin-top: -200px;
+}
+
+.trust-company-box {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-company-top {
+    display: none;
+    width: 150px !important;
+    margin: o auto;
+}
+
+#footer .copyright {
     padding: 5px;
     font-size: clamp(0.7rem, 2.5vw, 0.9rem);
 }
@@ -809,6 +830,13 @@ input[name='q']::placeholder {
         width: 300px;
     }
 
+    #footer .trust-company {
+        width: 180px;
+        position: relative;
+        margin-top: -130px;
+        margin-left: 380px;
+    }
+
     #footer .copyright p {
         width: initial;
     }
@@ -832,6 +860,14 @@ input[name='q']::placeholder {
 
     .video-mobile {
         display: block !important;
+    }
+
+    #footer .trust-company {
+        display: none;
+    }
+
+    .trust-company-top {
+        display: block;
     }
 }
 
