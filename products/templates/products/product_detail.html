@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block content %}
+<!-- PRODUCT DETAILS SECTION -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
@@ -136,11 +137,17 @@
         </div>
     </div>
 </div>
+<!-- END OF PRODUCT DETAILS SECTION -->
+
+<!-- PRODUCTS PROMOTION CAROUSEL -->
 {% include "includes/products_promotion.html" %}
+<!-- END OF PRODUCTS PROMOTION CAROUSEL -->
 {% endblock %}
 
 {% block postloadjs %}
 
 {{ block.super }}
+<!-- QUANTITY INPUT SCRIPT -->
 {% include 'includes/quantity_input_script.html' %}
+<!-- END OF QUANTITY INPUT SCRIPT -->
 {% endblock %}

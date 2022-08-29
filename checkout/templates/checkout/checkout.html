@@ -2,6 +2,11 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_css %}
+<!-- CHECKOUT CSS -->
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -21,7 +26,6 @@
                 <hr>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -62,9 +66,9 @@
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0">${{ total | floatformat:2 }}</p>
-                        <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                        <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                        <p class="my-0">€{{ total | floatformat:2 }}</p>
+                        <p class="my-0">€{{ delivery | floatformat:2 }}</p>
+                        <p class="my-0"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -133,11 +137,11 @@
             </div>
         </div>
     </div>
-    <h1 class="text-light logo-font loading-spinner">
+    <!-- <h1 class="text-light logo-font loading-spinner">
         <span class="icon">
             <i class="fas fa-3x fa-sync-alt fa-spin interactive-color"></i>
         </span>
-    </h1>
+    </h1> -->
 </div>
 <!-- END OF CHECKOUT SECTION -->
 {% endblock %}
