@@ -10,6 +10,7 @@
     </div>
 {% endblock %}
 
+<!-- BAG SECTION -->
 {% block content %}
     <div class="overlay"></div>
     <div class="container mb-2">
@@ -56,7 +57,7 @@
                         {% endfor %}
                         <div class="btt-button shadow-sm rounded-0 border border-black">
                             <a class="btt-link d-flex h-100">
-                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                                <i class="fas fa-arrow-up text-black mx-auto my-auto interactive-color"></i>
                             </a>	
                         </div>
                     </div>
@@ -83,7 +84,7 @@
                                     <td class="py-3 ml-5">
                                         {% if item.product.old_price %}
                                         <p class="lead mb-0 text-left font-weight-bold line-through">€{{ item.product.old_price }}</p>
-                                        <p class="lead mb-0 text-left font-weight-bold">€{{ item.product.price }}</p>
+                                        <p class="lead mb-0 text-left font-weight-bold text-success">€{{ item.product.price }}</p>
                                         {% else %}
                                         <p class="lead mb-0 text-left font-weight-bold">€{{ item.product.price }}</p>
                                         {% endif %}
@@ -92,7 +93,7 @@
                                         {% include "bag/quantity-form.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -112,7 +113,7 @@
                     <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                         <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
+                            <i class="fas fa-chevron-left interactive-color"></i>
                         </span>
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
@@ -120,14 +121,14 @@
             </div>
         </div>
     </div>
-    {% include "includes/products_comming_soon.html" %}
+<!-- END OF BAG SECTION -->
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 {% include 'includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');

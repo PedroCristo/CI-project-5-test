@@ -1,4 +1,4 @@
-// Get fully year on the footer
+// Gets full year and display on the footer
 $("#year").text(new Date().getFullYear());
 
 
@@ -43,3 +43,4 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
+

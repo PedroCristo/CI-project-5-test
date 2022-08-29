@@ -108,9 +108,21 @@
 
     {% block page_header %}
     {% endblock %}
- <!-- END OF BASE HTML  -->
+    <!-- END OF BASE HTML  -->
 
     {% block content %}
     {% endblock %}
+    <!-- FOOTER -->
     {% include "includes/footer.html" %}
+    <!-- END OF FOOTER -->
+
+    <!-- SCRIPTS -->
     {% include "includes/scripts.html" %}
+    <!-- END OF SCRIPTS -->
+
+    {% block postloadjs %}
+    <script>
+        // Show alert toasts on the top
+        $('.toast').toast('show');
+    </script>
+    {% endblock %}
