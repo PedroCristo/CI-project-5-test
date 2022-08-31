@@ -1,4 +1,4 @@
-"""boutique_ado URL Configuration
+"""watches_and_clocks URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -32,4 +32,4 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-HANDLER404 = 'boutique_ado.views.handler404'
+HANDLER404 = 'watches_and_clocks.views.handler404'
